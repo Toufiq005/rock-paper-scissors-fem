@@ -1,8 +1,2 @@
-still working you can play now in console with:
-gameFunction(0)
-gameFunction(1)
-gameFunction(2)
-
-paper = 0
-scissors = 1
-rock = 2
+Still Working 
+You can play now but just need the score bord and score functions
