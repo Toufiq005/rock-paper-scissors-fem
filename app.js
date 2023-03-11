@@ -32,15 +32,65 @@ const gameArry = [
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 const rock = document.getElementById('rock');
-const setp1 = document.getElementById('setp1');
+const step1 = document.getElementById('step1');
+const step2 = document.getElementById('step2');
+const player = document.getElementById('player');
+const computerGuess = document.getElementById('computerGuess');
 
 function gameFunction(a) {
     let random = Math.random();
     let computer = Math.floor(random * gameArry.length);
-    if (setp1.classList.contains('flex')) {
-        setp1.classList.remove('flex')
-        setp1.classList.add('hidden')
+    if (step1.classList.contains('flex')) {
+        step1.classList.remove('flex')
+        step1.classList.add('hidden')
     }
+    if (step2.classList.contains('hidden')) {
+        step2.classList.remove('hidden')
+        step2.classList.add('flex')
+    }
+    if (a == 0) {
+        player.innerHTML += `<div class="circle bg-blue flex justify-center items-center paper" >
+        <div class="circle2 flex justify-center items-center" id="paper" >
+          <img src="/images/icon-paper.svg" alt="">
+        </div>
+      </div>`
+    }
+    if (a == 1) {
+        player.innerHTML += `<div class="circle bg-yellow flex justify-center items-center  scissors">
+        <div class="circle2 flex justify-center items-center" id="scissors" >
+          <img src="/images/icon-scissors.svg" alt="">
+        </div>
+      </div>`
+    }
+    if (a == 2) {
+        player.innerHTML += `<div class="circle bg-red flex justify-center items-center  rock">
+        <div class="circle2 flex justify-center items-center" id="rock" >
+          <img src="/images/icon-rock.svg" alt="">
+        </div>
+      </div>`
+    }
+    if (computer == 0) {
+        computerGuess.innerHTML += `<div class="circle bg-blue flex justify-center items-center paper" >
+        <div class="circle2 flex justify-center items-center" id="paper" >
+          <img src="/images/icon-paper.svg" alt="">
+        </div>
+      </div>`
+    }
+    if (computer == 1) {
+        computerGuess.innerHTML += `<div class="circle bg-yellow flex justify-center items-center  scissors">
+        <div class="circle2 flex justify-center items-center" id="scissors" >
+          <img src="/images/icon-scissors.svg" alt="">
+        </div>
+      </div>`
+    }
+    if (computer == 2) {
+        computerGuess.innerHTML += `<div class="circle bg-red flex justify-center items-center  rock">
+        <div class="circle2 flex justify-center items-center" id="rock" >
+          <img src="/images/icon-rock.svg" alt="">
+        </div>
+      </div>`
+    }
+
     if (computer == a) {
         gameTie()
     }
@@ -64,12 +114,21 @@ function gameFunction(a) {
     }
 
 }
+
 function gameTie() {
-    console.log('Tie')
+    setTimeout(() => {
+        console.log('game Tie')
+    }, 1000)
 }
-function gameWin() {
-    console.log('you Win')
-}
+
 function gameLose() {
-    console.log('You Lose')
+    setTimeout(() => {
+        console.log('game Win')
+    }, 1000)
+}
+
+function gameWin() {
+    setTimeout(() => {
+        console.log('you win')
+    }, 1000);
 }

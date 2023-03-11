@@ -20,7 +20,7 @@
       <img src="/images/image-rules.svg" alt="Rule">
     </div>
   </div>
-  <div class="setp1 relative flex justify-center items-center" id="setp1">
+  <div class="step1 relative flex justify-center items-center" id="step1">
     <div class="flex flex-col items-center justify-center absolute">
       <div class="flex justify-between items-center mb">
         <div class="circle bg-blue flex justify-center items-center paper">
@@ -42,6 +42,21 @@
     </div>
     <img src="/images/bg-triangle.svg" alt="">
   </div>
+  <div class="step2 hidden justify-center h-screen w-full items-center " id="step2">
+    <div class="player circle trans  flex flex-col items-center ">
+      <div id="player"></div>
+      <h2 class="">You Picked</h2>
+    </div>
+    <div class="computer circle trans flex flex-col items-center">
+      <div id="computerGuess"></div>
+      <h2>House Picked</h2>
+    </div>
+  </div>
+  <div class="step4 flex absolute justify-center items-center flex-col">
+    <h1 id="gameResult">Result</h1>
+    <button>Play Again</button>
+  </div>
+
   <button class="rule-btn absolute" onclick="getRule()">RULES</button>
 
 
