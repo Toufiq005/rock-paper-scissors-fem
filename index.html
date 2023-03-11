@@ -13,14 +13,14 @@
 <body class="relative" onload="getRule()">
   <div class="rule-modal flex justify-center items-center " id="modal">
     <div class="rule flex justify-center items-center flex-col">
-      <div class="rule-top flex justify-between items-center">
+      <div class="rule-top flex justify-between items-center" id="modal-btn" onclick="getRule()">
         <h1>RULES</h1>
-        <button id="modal-btn" onclick="getRule()"><img src="/images/icon-close.svg" alt=""></button>
+        <button><img src="/images/icon-close.svg" alt=""></button>
       </div>
       <img src="/images/image-rules.svg" alt="Rule">
     </div>
   </div>
-  <div class="step1 relative flex justify-center items-center" id="step1">
+  <div class="step1 absolute flex justify-center items-center" id="step1">
     <div class="flex flex-col items-center justify-center absolute">
       <div class="flex justify-between items-center mb">
         <div class="circle bg-blue flex justify-center items-center paper">
@@ -42,7 +42,7 @@
     </div>
     <img src="/images/bg-triangle.svg" alt="">
   </div>
-  <div class="step2 hidden justify-center h-screen w-full items-center " id="step2">
+  <div class="step2 hidden absolute justify-center h-screen w-full items-center " id="step2">
     <div class="player circle trans  flex flex-col items-center ">
       <div id="player"></div>
       <h2 class="">You Picked</h2>
@@ -52,9 +52,11 @@
       <h2>House Picked</h2>
     </div>
   </div>
-  <div class="step4 flex absolute justify-center items-center flex-col">
-    <h1 id="gameResult">Result</h1>
-    <button>Play Again</button>
+  <div class="step4 hidden absolute justify-center items-center flex-col" id="gameResultModal">
+    <div class="step4-div ">
+      <h1 id="gameResult">Result</h1>
+      <button id="playAgain">Play Again</button>
+    </div>
   </div>
 
   <button class="rule-btn absolute" onclick="getRule()">RULES</button>
@@ -65,7 +67,7 @@
   <script src="app.js"></script>
   <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://www.github.com/Toufiq005">Toufiq Mowla</a>.
   </div> -->
 </body>
 
