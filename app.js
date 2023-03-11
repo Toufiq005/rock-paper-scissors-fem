@@ -24,6 +24,10 @@ const player = document.getElementById('player');
 const computerGuess = document.getElementById('computerGuess');
 const gameResult = document.getElementById('gameResult');
 const gameResultModal = document.getElementById('gameResultModal');
+const playAgainBtn = document.getElementById('playAgain')
+
+let random;
+let computer;
 
 function gameFunction(a) {
   let random = Math.random();
@@ -101,7 +105,7 @@ function gameFunction(a) {
   if (computer == 2 && a == 1) {
     gameLose()
   }
-
+  return computer;
 }
 
 function gameTie() {
@@ -130,6 +134,74 @@ function gameWin() {
     console.log('you win')
   }, 1000);
 }
-function playAgain() {
 
+playAgainBtn.addEventListener('click', function () {
+  playAgain();
+  addStep2();
+})
+
+function playAgain(a) {
+  gameResultModal.classList.add('hidden')
+  gameResultModal.classList.remove('flex')
+  step2.classList.add('hidden')
+  step2.classList.remove('flex')
+  step1.classList.remove('hidden')
+  step1.classList.add('flex')
+
+  if (a == 0) {
+    player.innerHTML -= `<div class="circle bg-blue flex justify-center items-center paper" >
+        <div class="circle2 flex justify-center items-center" id="paper" >
+          <img src="/images/icon-paper.svg" alt="">
+        </div>
+      </div>`
+  }
+  if (a == 1) {
+    player.innerHTML -= `<div class="circle bg-yellow flex justify-center items-center  scissors">
+        <div class="circle2 flex justify-center items-center" id="scissors" >
+          <img src="/images/icon-scissors.svg" alt="">
+        </div>
+      </div>`
+  }
+  if (a == 2) {
+    player.innerHTML -= `<div class="circle bg-red flex justify-center items-center  rock">
+        <div class="circle2 flex justify-center items-center" id="rock" >
+          <img src="/images/icon-rock.svg" alt="">
+        </div>
+      </div>`
+  }
+  if (computer == 0) {
+    computerGuess.innerHTML -= `<div class="circle bg-blue flex justify-center items-center paper" >
+        <div class="circle2 flex justify-center items-center" id="paper" >
+          <img src="/images/icon-paper.svg" alt="">
+        </div>
+      </div>`
+  }
+  if (computer == 1) {
+    computerGuess.innerHTML -= `<div class="circle bg-yellow flex justify-center items-center  scissors">
+        <div class="circle2 flex justify-center items-center" id="scissors" >
+          <img src="/images/icon-scissors.svg" alt="">
+        </div>
+      </div>`
+  }
+  if (computer == 2) {
+    computerGuess.innerHTML -= `<div class="circle bg-red flex justify-center items-center  rock">
+        <div class="circle2 flex justify-center items-center" id="rock" >
+          <img src="/images/icon-rock.svg" alt="">
+        </div>
+      </div>`
+  }
+
+
+}
+function addStep2() {
+  step2.innerHTML += `<div class="step2 hidden absolute justify-center h-screen w-full items-center " id="step2">
+  <div class="player circle trans  flex flex-col items-center ">
+    <div id="player"></div>
+    <h2 class="">You Picked</h2>
+  </div>
+  <div class="computer circle trans flex flex-col items-center">
+    <div id="computerGuess"></div>
+    <h2>House Picked</h2>
+  </div>
+</div>`
 }
